@@ -54,6 +54,7 @@ template <typename T> Quaternion<T> log10( const Quaternion<T> & );
 template <typename T> Quaternion<T> pow( const Quaternion<T> &, const Quaternion<T> & );
 template <typename T> Quaternion<T> pow( const Quaternion<T> &, T );
 template <typename T> Quaternion<T> inverse( const Quaternion<T> & );
+template <typename T> Quaternion<T> cross(const Quaternion<T> & );
 template <typename T> Quaternion<T> sin( const Quaternion<T> & );
 template <typename T> Quaternion<T> cos( const Quaternion<T> & );
 template <typename T> Quaternion<T> tan( const Quaternion<T> & );
@@ -185,6 +186,9 @@ template <typename T = double> class Quaternion {
         Quaternion pow(const Quaternion & w) const;
         Quaternion pow(T x) const;
         Quaternion inverse() const;
+
+
+        Quaternion cross(const Quaternion &) const;
 
         /******************************************
          * Trigonometric and Hyperbolic Functions

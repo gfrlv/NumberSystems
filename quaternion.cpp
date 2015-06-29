@@ -444,6 +444,14 @@ template <typename T> Quaternion<T> Quaternion<T>::inverse() const {
     }
 }
 
+template <typename T> Quaternion<T> Quaternion<T>::cross(const Quaternion<T>& other) const {
+    T q1, q2, q3;
+    q1 = j * other[3] - k * other[2];
+    q2 = k * other[1] - i * other[3];
+    q3 = i * other[2] - j * other[1];
+    return Quaternion(0, q1, q2, q3);
+}
+
 /********************************************************************
  * Trigonometric and Hyperbolic Functions
  *
